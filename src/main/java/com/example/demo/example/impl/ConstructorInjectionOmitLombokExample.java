@@ -3,19 +3,19 @@ package com.example.demo.example.impl;
 import com.example.demo.example.Example;
 import com.example.demo.service.SomeService;
 
+import lombok.RequiredArgsConstructor;
 
 //@Component
-public class ConstructorInjectionOmitExamlpe implements Example {
+@RequiredArgsConstructor
+public class ConstructorInjectionOmitLombokExample implements Example {
 	/** フィールド */
 	private final SomeService someService;
 	
-	/** コンストラクタインジェクション */
-	public ConstructorInjectionOmitExamlpe(SomeService someService) {
-		this.someService = someService;
-	}
+	// コンストラクタが省略できる
 	
 	/** 実行 */
 	public void run() {
 		someService.doservice();
 	}
+
 }
